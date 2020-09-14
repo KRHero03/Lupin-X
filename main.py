@@ -64,5 +64,3 @@ def sudoku_solver():
         return jsonify(response)
     
     return "Yet to make."
-if __name__ == '__main__':  
-   app.run(debug = True)  
