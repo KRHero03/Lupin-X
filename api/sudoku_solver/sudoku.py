@@ -4,7 +4,6 @@ import sys
 from collections import deque
 from copy import deepcopy
 import time
-import csv
 
 class SudoKu:
     size=9
