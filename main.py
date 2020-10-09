@@ -1,7 +1,7 @@
 import flask
 from flask import request, jsonify,render_template
 from var_dump import var_dump
-from api.sudoku_solver.sudoku import SudoKu
+from api.sudoku_solver.sudoku import SudoKu,breadth_first_tree_search
 from api.eight_puzzle_solver.eight_puzzle import Solver
 app = flask.Flask(__name__)
 print("Server Started!")
@@ -59,7 +59,8 @@ def sudoku_solver():
         response["solution"] = solved.state
         return jsonify(response)
 
-    except:
+    except Exception as e:
+        print(e)
         response["success"] = -1
         response["error"] = "Bad Request Format! Please refer the API Documentation."
         return jsonify(response)
